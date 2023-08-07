@@ -1,0 +1,14 @@
+{
+    "userProfile": {
+        "userFirstName": "",
+        "userLastName": "",
+        "userImage": "",
+        "username": "",
+        "userAlias": "",
+        "userID": "",
+        "country": "",
+        "level": "",
+        "isAGoyervSupportOfficial": false,
+        "points": ""
+    }
+}
