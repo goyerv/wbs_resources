@@ -9,9 +9,9 @@
 
 part of 'fields.dart';
 
-SizedBox sbhmax = const SizedBox(height: 40.0);
-SizedBox sbhavg = const SizedBox(height: 20.0);
-SizedBox sbhmin = const SizedBox(height: 10.0);
-SizedBox sbwmax = const SizedBox(width: 40.0);
-SizedBox sbwavg = const SizedBox(width: 20.0);
-SizedBox sbwmin = const SizedBox(width: 10.0);
+SizedBox sbhmax = const SizedBox(height: 70.0);
+SizedBox sbhavg = const SizedBox(height: 50.0);
+SizedBox sbhmin = const SizedBox(height: 25.0);
+SizedBox sbwmax = const SizedBox(width: 70.0);
+SizedBox sbwavg = const SizedBox(width: 50.0);
+SizedBox sbwmin = const SizedBox(width: 25.0);

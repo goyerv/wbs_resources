@@ -9,11 +9,15 @@
 
 import 'package:flutter/material.dart';
 import 'dependency_injections.dart' as di;
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'index.dart'; 
 
 
-void main() async { 
+
+
+Future<void> main() async { 
   WidgetsFlutterBinding.ensureInitialized();
-  di.init();
-  runApp(const GoyervCommunity());
+  await di.init();
+  usePathUrlStrategy();
+  runApp(const GoyervResources());
 } 

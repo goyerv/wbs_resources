@@ -7,8 +7,11 @@
 
 
 import 'package:flutter/material.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+// import 'dependency_injections.dart';
+// import 'homepage/presentation/bloc/homepage_bloc.dart';
 import 'homepage/presentation/states/homepage.dart';
 import 'web_core/internationalization/app_localizations.dart';
 import 'web_core/internationalization/locales_preferences.dart';
@@ -16,35 +19,43 @@ import 'web_core/themes/dark/theme_dark.dart';
 import 'web_core/themes/light/theme_light.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-class GoyervCommunity extends StatefulWidget {
+class GoyervResources extends StatefulWidget {
 
-  const GoyervCommunity({Key? key}) : super(key: key);
+  const GoyervResources({Key? key}) : super(key: key);
 
   @override
-  State<GoyervCommunity> createState() => _GoyervCommunityState();
+  State<GoyervResources> createState() => _GoyervResourcesState();
 
 }
 
-class _GoyervCommunityState extends State<GoyervCommunity> {
+class _GoyervResourcesState extends State<GoyervResources> {
 
   late LocalesPreferencesImpl localesPreferences;
 
   @override 
-  Future<void> initState() async {
-    localesPreferences = LocalesPreferencesImpl(await SharedPreferences.getInstance());
-    // setState(() {theme = await themeData.getThemeData().then((value) => value.theme!);}); Either the one on top or this. Since this uses setState, the whole app will rebuild that i'm sure or, but for the one on top, not so sure.
-    localesPreferences = LocalesPreferencesImpl(await SharedPreferences.getInstance());
-    super.initState();
+  void initState() {
+    localesPreferences = LocalesPreferencesImpl(SharedPreferences.getInstance());
+    super.initState(); 
   }
+
+  // I updated google font package
+  // I updated http package
+  // I added universal_io package (only do this for web based applications)
+  // I removed the color parameter from the AppBarTheme() in themes. I had to choose between backgroundColor and Color as they were same thing
+  // I made a few changes to locales_preferences.dart. Just copy and paste
+  // Future<void> initState() async {} is illegal. Should be the original thing.
+  // Copy and paste the code in web_desktop darkTheme to here and everywhere.
+
+
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Goyerv',
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: ThemeMode.system,
-      locale: Locale('${localesPreferences.getPlatformLocale().then((value) => value.first)}', '${localesPreferences.getPlatformLocale().then((value) => value.elementAt(1) == ''? null : value.elementAt(1))}'),
+      // locale: const Locale('en', 'US'),
+      // locale: Locale('${localesPreferences.getPlatformLocale().then((value) => value.first)}', '${localesPreferences.getPlatformLocale().then((value) => value.elementAt(1) == ''? null : value.elementAt(1))}'),
       supportedLocales: const [
         Locale('en', 'US'),
         Locale('ar', null),
@@ -149,6 +160,10 @@ class _GoyervCommunityState extends State<GoyervCommunity> {
         return supportedLocales.first;
       },
       home: const Homepage(),
+      // home: BlocProvider(
+        // create: ((context) => sl<HomepageBloc>()),
+        // child: const Homepage(),
+      // ),
     );
   }
 

@@ -11,6 +11,8 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:http/retry.dart';
+import 'package:http/src/client.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../web_core/auth/auth.dart';
 import '../../../../web_core/error/exceptions.dart';
@@ -23,11 +25,12 @@ abstract class HomepageRemoteDataSource {
 
 class HomepageRemoteDataSourceImpl implements HomepageRemoteDataSource {
 
-  final http.Client client;
-  final AuthenticationFragments authFragments;
 
-  HomepageRemoteDataSourceImpl(this.client, this.authFragments);
+  HomepageRemoteDataSourceImpl();
+
   
+  final http.Client client = Client();
+  final AuthenticationFragmentsImpl authFragments = AuthenticationFragmentsImpl(SharedPreferences.getInstance());
 
 
   @override

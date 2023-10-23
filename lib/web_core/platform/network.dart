@@ -14,9 +14,10 @@ abstract class Network {
 }
 
 class NetworkImpl implements Network {
+  
   final InternetConnectionChecker connectionChecker;
 
-  const NetworkImpl({required this.connectionChecker});
+  const NetworkImpl(this.connectionChecker);
 
   @override 
   Future<bool> get isConnected => connectionChecker.hasConnection;

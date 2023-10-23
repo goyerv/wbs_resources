@@ -31,10 +31,10 @@ dependencies:
     sdk: flutter
 
   # google_fonts
-  google_fonts: ^2.3.1
+  google_fonts: ^4.0.4
 
   # http
-  http: ^0.13.4
+  http: ^1.0.0
 
   # flutter_bloc
   flutter_bloc: ^8.0.1
@@ -61,13 +61,16 @@ dependencies:
   url_launcher: ^6.1.6
 
   # intl
-  intl: ^0.17.0
+  intl: ^0.18.0
 
   # get_it
   get_it: ^7.2.0
 
   # encrypt
   encrypt: ^5.0.1
+
+  # universal
+  universal_io: ^2.2.2
 
 
 
@@ -89,6 +92,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  build_runner: ^2.4.6
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

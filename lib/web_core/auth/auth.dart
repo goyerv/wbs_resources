@@ -44,17 +44,17 @@ abstract class AuthenticationFragments {
 
 class AuthenticationFragmentsImpl implements AuthenticationFragments {
 
-  final SharedPreferences sharedPreferences;
+  final Future<SharedPreferences> sharedPreferences;
 
   AuthenticationFragmentsImpl(this.sharedPreferences);
     
   @override
   Future<AuthModel> getAccessToken() async {
 
-    final _accessToken = sharedPreferences.getString(accessToken);
+    final access_token = await sharedPreferences.then((value) => value.getString(accessToken));
 
-    if (_accessToken != null) {
-      return AuthModel(accessToken: _accessToken);
+    if (access_token != null) {
+      return AuthModel(accessToken: access_token);
     
     } else {
       throw CacheException();
@@ -65,7 +65,7 @@ class AuthenticationFragmentsImpl implements AuthenticationFragments {
   @override
   Future<AuthModel> getPlatformProperties() async {
 
-   final _platformToken = sharedPreferences.getString(platformProperties);
+   final _platformToken = await sharedPreferences.then((value) => value.getString(platformProperties));
 
    if (_platformToken != null) {
       return AuthModel(platformProperties: _platformToken);
@@ -79,7 +79,7 @@ class AuthenticationFragmentsImpl implements AuthenticationFragments {
   @override
   Future<AuthModel> getUserID() async {
 
-   final _userIDToken = sharedPreferences.getString(userID);
+   final _userIDToken = await sharedPreferences.then((value) => value.getString(userID));
 
    if (_userIDToken != null) {
       return AuthModel(userID: _userIDToken);
@@ -93,7 +93,7 @@ class AuthenticationFragmentsImpl implements AuthenticationFragments {
   @override
   Future<AuthModel> getRefreshToken() async {
    
-   final _refreshToken = sharedPreferences.getString(refreshToken);
+   final _refreshToken = await sharedPreferences.then((value) => value.getString(refreshToken));
 
    if (_refreshToken != null) {
       // return Future.value(AuthModel(refreshToken: _refreshToken));
@@ -108,7 +108,7 @@ class AuthenticationFragmentsImpl implements AuthenticationFragments {
   @override
   Future<AuthModel> getWebApiKey() async {
 
-   final _webApiKey = sharedPreferences.getString(webApiKey);
+   final _webApiKey = await sharedPreferences.then((value) => value.getString(webApiKey));
 
    if (_webApiKey != null) {
       return AuthModel(webApiKey: _webApiKey);
@@ -125,7 +125,7 @@ class AuthenticationFragmentsImpl implements AuthenticationFragments {
   Future<Either<Errors, AuthModel>?> setAccessToken(AuthModel modelToCache) async {
 
     try {
-      await sharedPreferences.setString(accessToken, modelToCache.accessToken!);
+      sharedPreferences.then((value) => value.setString(accessToken, modelToCache.accessToken!));
     
     } on CacheException {
       throw CacheException();
@@ -138,7 +138,7 @@ class AuthenticationFragmentsImpl implements AuthenticationFragments {
   Future<Either<Errors, AuthModel>?> setPlatformProperties(AuthModel modelToCache) async {
 
     try {
-      await sharedPreferences.setString(platformProperties, modelToCache.platformProperties!);
+      sharedPreferences.then((value) => value.setString(platformProperties, modelToCache.platformProperties!));
     
     } on CacheException {
       throw CacheException();
@@ -151,7 +151,7 @@ class AuthenticationFragmentsImpl implements AuthenticationFragments {
   Future<Either<Errors, AuthModel>?> setUserID(AuthModel modelToCache) async {
 
     try {
-      await sharedPreferences.setString(userID, modelToCache.userID!);
+      sharedPreferences.then((value) => value.setString(userID, modelToCache.userID!));
     
     } on CacheException {
       throw CacheException();
@@ -164,7 +164,8 @@ class AuthenticationFragmentsImpl implements AuthenticationFragments {
   Future<Either<Errors, AuthModel>?> setRefreshToken(AuthModel modelToCache) async {
 
     try {
-      await sharedPreferences.setString(refreshToken, modelToCache.refreshToken!);
+      sharedPreferences.then((value) => value.setString(refreshToken, modelToCache.refreshToken!));
+
     
     } on CacheException {
       throw CacheException();
@@ -177,7 +178,7 @@ class AuthenticationFragmentsImpl implements AuthenticationFragments {
   Future<Either<Errors, AuthModel>?> setWebApiKey(AuthModel modelToCache) async {
 
     try {
-      await sharedPreferences.setString(webApiKey, modelToCache.webApiKey!);
+      sharedPreferences.then((value) => value.setString(webApiKey, modelToCache.webApiKey!));
     
     } on CacheException {
       throw CacheException();

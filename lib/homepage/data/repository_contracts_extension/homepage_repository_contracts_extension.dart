@@ -8,6 +8,7 @@
 
 
 import 'package:dartz/dartz.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 import '../../../web_core/error/errors.dart';
 import '../../../web_core/error/exceptions.dart';
@@ -22,10 +23,11 @@ typedef getHomepageData = Future<HomepageModel> Function();
 
 class HomepageRepositoryContractsImpl implements HomepageRepositoryContracts {
 
-  final HomepageRemoteDataSource remoteDataSource;
-  final Network network;
 
-  HomepageRepositoryContractsImpl(this.remoteDataSource, this.network);
+  HomepageRepositoryContractsImpl();
+
+  final HomepageRemoteDataSourceImpl remoteDataSource = HomepageRemoteDataSourceImpl();
+  final NetworkImpl network = NetworkImpl(InternetConnectionChecker());
 
 
   @override

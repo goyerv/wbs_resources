@@ -32,9 +32,9 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
     on<HomepageEvent>((event, emit) async {
       if (event is GetResourcesEvent) {
         emit(const HomepageLoading());
-        final getResourcesEither = await getResources.get(Parameters(resourceID: event.resourceID));
+        // final getResourcesEither = await getResources.get(Parameters(resourceID: event.resourceID));
 
-        emit(getResourcesEither.fold((l) => Err(mapErrorsToErrorMessage(l)), (r) => HomepageLoaded(r)));
+        // emit(getResourcesEither.fold((l) => Err(mapErrorsToErrorMessage(l)), (r) => HomepageLoaded(r)));
       
       }
     });

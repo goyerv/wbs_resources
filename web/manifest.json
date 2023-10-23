@@ -1,6 +1,6 @@
 {
-    "name": "goyerv_resources_website",
-    "short_name": "goyerv_resources_website",
+    "name": "Goyerv - Resources",
+    "short_name": "Goyerv - Resources",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
