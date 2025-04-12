@@ -8,7 +8,6 @@
 
 
 import 'package:flutter/material.dart';
-import 'dependency_injections.dart' as di;
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'index.dart'; 
 
@@ -17,7 +16,6 @@ import 'index.dart';
 
 Future<void> main() async { 
   WidgetsFlutterBinding.ensureInitialized();
-  await di.init();
-  usePathUrlStrategy();
+  setUrlStrategy(const PathUrlStrategy());
   runApp(const GoyervResources());
 } 

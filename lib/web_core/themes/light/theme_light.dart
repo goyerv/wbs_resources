@@ -1,4 +1,4 @@
-// Copyright (c) 2022 Goyerv Ltd. All rights reserved.
+// Copyright (c) 2023 Goyerv Ltd. All rights reserved.
 // Author: Emmanuel Okorafor
 
 
@@ -22,7 +22,7 @@ ThemeData lightTheme = ThemeData(
     color: white..withOpacity(0.8),
     elevation: 0.0,
   ),
-  bottomNavigationBarTheme: BottomNavigationBarThemeData(
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     backgroundColor: white,
     elevation: 0.0,
     selectedIconTheme: const IconThemeData(
@@ -59,8 +59,8 @@ ThemeData lightTheme = ThemeData(
     shape: RoundedRectangleBorder(borderRadius: BorderRadiusDirectional.circular(15.0), side: const BorderSide(color: black, width: 5.0)),
   ),
   checkboxTheme: CheckboxThemeData(
-    fillColor: MaterialStateProperty.all(white),
-    checkColor: MaterialStateProperty.all(defaultColor),
+    fillColor: WidgetStateProperty.all(white),
+    checkColor: WidgetStateProperty.all(defaultColor),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(6.0),
     ),
@@ -86,13 +86,49 @@ ThemeData lightTheme = ThemeData(
     elevation: 10.0
   ),
   disabledColor: grey..withOpacity(0.7),
+  dropdownMenuTheme: DropdownMenuThemeData(
+    inputDecorationTheme: InputDecorationTheme(
+      labelStyle: bodyLarge,
+      floatingLabelStyle: labelLarge,
+      helperStyle: labelLarge.copyWith(color: black54),
+      hintStyle: bodyLarge.copyWith(color: black54), 
+      errorStyle: labelMedium.copyWith(color: red),
+      iconColor: black,
+      prefixStyle: labelMedium,
+      prefixIconColor: black,
+      suffixStyle: labelMedium,
+      suffixIconColor: defaultColor, 
+      filled: false,
+      errorBorder: const OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+        borderSide:  BorderSide(
+          color: red,
+          width: 1.0,
+        ),
+      ),
+      focusedBorder: const OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+        borderSide:  BorderSide(
+          color: defaultColor,
+          width: 1.0,
+        ),
+      ),
+      enabledBorder: const OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+        borderSide:  BorderSide(
+          color: black,
+          width: 1.0,
+        ),
+      ),
+    ),
+  ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.all(defaultColor),
-      shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0))),
-      elevation: MaterialStateProperty.all(0.5),
-      side: MaterialStateProperty.all(const BorderSide(color: defaultColor, width: 0.5)),
-      textStyle: MaterialStateProperty.all(bodyLarge),
+      backgroundColor: WidgetStateProperty.all(defaultColor),
+      shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0))),
+      elevation: WidgetStateProperty.all(0.5),
+      side: WidgetStateProperty.all(const BorderSide(color: defaultColor, width: 0.5)),
+      textStyle: WidgetStateProperty.all(bodyLarge),
       animationDuration: const Duration(milliseconds: 60),
     ),
   ),
@@ -101,6 +137,7 @@ ThemeData lightTheme = ThemeData(
   hoverColor: whiteSmoke,
   hintColor: black54,
   inputDecorationTheme: InputDecorationTheme(
+    errorMaxLines: 3,
     labelStyle: bodyLarge,
     floatingLabelStyle: labelLarge,
     helperStyle: labelLarge.copyWith(color: black54),
@@ -112,22 +149,29 @@ ThemeData lightTheme = ThemeData(
     suffixStyle: labelMedium,
     suffixIconColor: defaultColor, 
     filled: false,
+    focusedErrorBorder: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+      borderSide:  BorderSide(
+        color: red,
+        width: 1.0,
+      ),
+    ), 
     errorBorder: const OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(4.0)),
+      borderRadius: BorderRadius.all(Radius.circular(10.0)),
       borderSide:  BorderSide(
         color: red,
         width: 1.0,
       ),
     ),
     focusedBorder: const OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(4.0)),
+      borderRadius: BorderRadius.all(Radius.circular(10.0)),
       borderSide:  BorderSide(
         color: defaultColor,
         width: 1.0,
       ),
     ),
     enabledBorder: const OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(4.0)),
+      borderRadius: BorderRadius.all(Radius.circular(10.0)),
       borderSide:  BorderSide(
         color: black,
         width: 1.0,
@@ -158,19 +202,19 @@ ThemeData lightTheme = ThemeData(
   ),
   // platform: TargetPlatform.android, for mobile device
   outlinedButtonTheme: OutlinedButtonThemeData(
-    style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.all(white),
-      textStyle: MaterialStateProperty.all(labelLarge),
-      side: MaterialStateProperty.all(const BorderSide(color: defaultColor, width: 0.5)),
+  style: ButtonStyle(
+      backgroundColor: WidgetStateProperty.all(transparent),
+      textStyle: WidgetStateProperty.all(labelLarge),
+      side: WidgetStateProperty.all(const BorderSide(color: defaultColor, width: 1)),
     ),
   ),
   radioTheme: RadioThemeData(
-    fillColor: MaterialStateProperty.all(defaultColor),
+    fillColor: WidgetStateProperty.all(defaultColor),
   ),
   scaffoldBackgroundColor: whiteSmoke,
   switchTheme: SwitchThemeData(
-    thumbColor: MaterialStateProperty.all(defaultColor),
-    trackColor: MaterialStateProperty.all(grey),
+    thumbColor: WidgetStateProperty.all(defaultColor),
+    trackColor: WidgetStateProperty.all(grey),
   ),
   sliderTheme: const SliderThemeData(
     activeTrackColor: defaultColor,
@@ -184,24 +228,28 @@ ThemeData lightTheme = ThemeData(
   ),
   snackBarTheme: SnackBarThemeData(
     backgroundColor: white..withOpacity(0.8),
-    actionTextColor: defaultColor,
+    actionTextColor: blue,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(10.0),
     ),
     contentTextStyle: bodyLarge,
   ),
-  tabBarTheme: const TabBarTheme(
-    indicator: BoxDecoration(
-      color: defaultColor,
+  tabBarTheme: TabBarTheme(
+    indicator: const UnderlineTabIndicator(
+      borderRadius: BorderRadius.only(topLeft: Radius.circular(4.0), topRight: Radius.circular(4.0)),
+      borderSide: BorderSide(width: 5.0, color: defaultColor),
+      insets: EdgeInsets.symmetric(horizontal: 16.0)
     ),
     indicatorSize: TabBarIndicatorSize.tab,
     labelColor: black,
+    indicatorColor: defaultColor,
+    overlayColor: WidgetStateProperty.all(transparent),
   ),
   textButtonTheme: TextButtonThemeData(
     style: ButtonStyle(
-      overlayColor: MaterialStateColor.resolveWith((states) => transparent),
-      backgroundColor: MaterialStateProperty.all(transparent),
-      textStyle: MaterialStateProperty.all(labelLarge..copyWith(color: defaultColor)),
+      overlayColor: WidgetStateColor.resolveWith((states) => transparent),
+      backgroundColor: WidgetStateProperty.all(transparent),
+      textStyle: WidgetStateProperty.all(labelLarge..copyWith(color: blue)),
     ),
   ),
   textSelectionTheme: const TextSelectionThemeData(
@@ -209,22 +257,32 @@ ThemeData lightTheme = ThemeData(
     selectionHandleColor: defaultColor,
     selectionColor: defaultColorLighter,
   ),
-  textTheme: TextTheme(
-    displayLarge: displayLarge..copyWith(color: black),
-    displayMedium: displayMedium..copyWith(color: black),
-    displaySmall: displaySmall..copyWith(color: black),
-    headlineLarge: headlineLarge..copyWith(color: black),
-    headlineMedium: headlineMedium..copyWith(color: black),
-    headlineSmall: headlineSmall..copyWith(color: black),
-    titleLarge: titleLarge..copyWith(color: black),
-    titleMedium: titleMedium..copyWith(color: black),
-    titleSmall: titleSmall..copyWith(color: black),
-    bodyLarge: bodyLarge..copyWith(color: black),
-    bodyMedium: bodyMedium..copyWith(color: black),
-    bodySmall: bodySmall..copyWith(color: black),
-    labelLarge: labelLarge..copyWith(color: black),
-    labelMedium: labelMedium..copyWith(color: black54),
-    labelSmall: labelSmall..copyWith(color: black54),
-
+  textTheme: const TextTheme(
+    displayLarge: displayLarge,
+    displayMedium: displayMedium,
+    displaySmall: displaySmall,
+    headlineLarge: headlineLarge,
+    headlineMedium: headlineMedium,
+    headlineSmall: headlineSmall,
+    titleLarge: titleLarge,
+    titleMedium: titleMedium,
+    titleSmall: titleSmall,
+    bodyLarge: bodyLarge,
+    bodyMedium: bodyMedium,
+    bodySmall: bodySmall,
+    labelLarge: labelLarge,
+    labelMedium: labelMedium,
+    labelSmall: labelSmall,
   ),
+  tooltipTheme: TooltipThemeData(
+    preferBelow: true, 
+    textStyle: labelSmall, 
+    decoration: BoxDecoration(
+      color: whiteSmokeLighter,
+      borderRadius: BorderRadius.circular(10.0)
+    ),
+    padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+    margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0), 
+    excludeFromSemantics: false,
+  )
 );

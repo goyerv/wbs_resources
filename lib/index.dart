@@ -7,17 +7,22 @@
 
 
 import 'package:flutter/material.dart';
-// import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
-// import 'dependency_injections.dart';
-// import 'homepage/presentation/bloc/homepage_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'homepage/presentation/resources/2025/best_practices.dart';
+import 'homepage/presentation/resources/2025/building_a_personal_brand.dart';
+import 'homepage/presentation/resources/2025/contraband.dart';
+import 'homepage/presentation/resources/2025/customs_declaration.dart';
+import 'homepage/presentation/resources/2025/packaging.dart';
+import 'homepage/presentation/resources/2025/personal_protection.dart';
+import 'homepage/presentation/resources/2025/prohibited_requests.dart';
+import 'homepage/presentation/resources/2025/reviews_and_ratings.dart';
+import 'homepage/presentation/resources/2025/things_you_should_know_as_a_runner.dart';
+import 'homepage/presentation/resources/2025/unfinished_requests.dart';
 import 'homepage/presentation/states/homepage.dart';
-import 'web_core/internationalization/app_localizations.dart';
-import 'web_core/internationalization/locales_preferences.dart';
 import 'web_core/themes/dark/theme_dark.dart';
 import 'web_core/themes/light/theme_light.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+
+
 
 class GoyervResources extends StatefulWidget {
 
@@ -30,22 +35,160 @@ class GoyervResources extends StatefulWidget {
 
 class _GoyervResourcesState extends State<GoyervResources> {
 
-  late LocalesPreferencesImpl localesPreferences;
+
+
+  late final GoRouter router;
+  late GlobalKey<NavigatorState> navigatorKey;
+
 
   @override 
   void initState() {
-    localesPreferences = LocalesPreferencesImpl(SharedPreferences.getInstance());
-    super.initState(); 
+    navigatorKey = GlobalKey<NavigatorState>();
+    initializeRouter();
+    super.initState();
   }
 
-  // I updated google font package
-  // I updated http package
-  // I added universal_io package (only do this for web based applications)
-  // I removed the color parameter from the AppBarTheme() in themes. I had to choose between backgroundColor and Color as they were same thing
-  // I made a few changes to locales_preferences.dart. Just copy and paste
-  // Future<void> initState() async {} is illegal. Should be the original thing.
-  // Copy and paste the code in web_desktop darkTheme to here and everywhere.
 
+
+
+  void initializeRouter() {
+    router = GoRouter(
+      initialLocation: '/',
+      navigatorKey: navigatorKey,
+      redirect: (context, state) {
+        final path = state.uri.path;
+
+        if (path.endsWith('.html')) {
+          final newPath = path.replaceAll('.html', '');
+          return newPath;
+        }
+
+        return null;
+      },
+      routes: [
+    
+        GoRoute(
+          path: '/',
+          builder: (context, state) => const Homepage()
+        ),
+  
+        GoRoute(
+          path: '/2025/:path',
+          builder: (context, state) {
+            if(state.pathParameters['path'] == "best-practices") {
+              return const BestPractices();
+            }
+
+            return const Homepage();
+          }
+        ),
+      
+  
+        GoRoute(
+          path: '/2025/:path',
+          builder: (context, state) {
+            if(state.pathParameters['path'] == "building-a-personal-brand") {
+              return const BuildingAPersonalBrand();
+            }
+
+            return const Homepage();
+          }
+        ),
+    
+      
+        GoRoute(
+          path: '/2025/:path',
+          builder: (context, state) {
+            if(state.pathParameters['path'] == "contrabands") {
+              return const Contraband();
+            }
+
+            return const Homepage();
+          }
+        ),
+      
+        GoRoute(
+          path: '/2025/:path',
+          builder: (context, state) {
+            if(state.pathParameters['path'] == "customs-declaration") {
+              return const CustomsDeclaration();
+            }
+
+            return const Homepage();
+          }
+        ),
+      
+        GoRoute(
+          path: '/2025/:path',
+          builder: (context, state) {
+            if(state.pathParameters['path'] == "packaging") {
+              return const Packaging();
+            }
+
+            return const Homepage();
+          }
+        ),
+      
+        GoRoute(
+          path: '/2025/:path',
+          builder: (context, state) {
+            if(state.pathParameters['path'] == "personal-protection-during-runs") {
+              return const PersonalProtectionDuringRuns();
+            }
+
+            return const Homepage();
+          }
+        ),
+      
+        GoRoute(
+          path: '/2025/:path',
+          builder: (context, state) {
+            if(state.pathParameters['path'] == "prohibited-requests") {
+              return const ProhibitedRequests();
+            }
+
+            return const Homepage();
+          }
+        ),
+      
+        GoRoute(
+          path: '/2025/:path',
+          builder: (context, state) {
+            if(state.pathParameters['path'] == "reviews-and-ratings") {
+              return const ReviewsAndRatings();
+            }
+
+            return const Homepage();
+          }
+        ),
+      
+        GoRoute(
+          path: '/2025/:path',
+          builder: (context, state) {
+            if(state.pathParameters['path'] == "things-you-should-know-as-a-runner") {
+              return const ThingsYouShouldKnowAsARunner();
+            }
+
+            return const Homepage();
+          }
+        ),
+      
+        GoRoute(
+          path: '/2025/:path',
+          builder: (context, state) {
+            if(state.pathParameters['path'] == "handling-uncompleted-requests") {
+              return const UnfinishedRequests();
+            }
+
+            return const Homepage();
+          }
+        ),
+      
+    
+      ]
+    );
+  
+  }
 
 
   @override
@@ -54,116 +197,6 @@ class _GoyervResourcesState extends State<GoyervResources> {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: ThemeMode.system,
-      // locale: const Locale('en', 'US'),
-      // locale: Locale('${localesPreferences.getPlatformLocale().then((value) => value.first)}', '${localesPreferences.getPlatformLocale().then((value) => value.elementAt(1) == ''? null : value.elementAt(1))}'),
-      supportedLocales: const [
-        Locale('en', 'US'),
-        Locale('ar', null),
-        Locale('bn', null),
-        Locale('bg', null),
-        Locale('my', null),
-        Locale('ceb', null),
-        Locale('zh', 'CN'),
-        Locale('zh', 'TW'),
-        Locale('hr', null),
-        Locale('cs', null),
-        Locale('da', null),
-        Locale('nl', null),
-        Locale('en', 'AU'),
-        Locale('en', 'BZ'),
-        Locale('en', 'CA'),
-        Locale('en', 'CB'),
-        Locale('en', 'GB'),
-        Locale('en', 'IN'),
-        Locale('en', 'IE'),
-        Locale('en', 'JM'),
-        Locale('en', 'NZ'),
-        Locale('en', 'PH'),
-        Locale('en', 'ZA'),
-        Locale('en', 'TT'),
-        Locale('et', null),
-        Locale('fil', null),
-        Locale('fi', null),
-        Locale('fr', 'BE'),
-        Locale('fr', 'FR'),
-        Locale('fr', 'LU'),
-        Locale('fr', 'CH'),
-        Locale('ka', null),
-        Locale('de', 'AT'),
-        Locale('de', 'DE'),
-        Locale('de', 'LI'),
-        Locale('de', 'LU'),
-        Locale('de', 'CH'),
-        Locale('el', null),
-        Locale('gu', null),
-        Locale('ha', 'NG'),
-        Locale('hi', null),
-        Locale('hu', null),
-        Locale('ig', 'NG'),
-        Locale('id', null),
-        Locale('it', 'IT'),
-        Locale('it', 'CH'),
-        Locale('ja', null),
-        Locale('kn', null),
-        Locale('km', null),
-        Locale('ko', null),
-        Locale('ms', 'MY'),
-        Locale('ml', null),
-        Locale('mr'),
-        Locale('nb', 'NO'),
-        Locale('nn', 'NO'),
-        Locale('or', null),
-        Locale('pl', null),
-        Locale('pt', 'BR'),
-        Locale('pt', 'PT'),
-        Locale('pa', null),
-        Locale('ro', 'MO'),
-        Locale('ru', 'MO'),
-        Locale('es', 'AR'),
-        Locale('es', 'BO'),
-        Locale('es', 'CI'),
-        Locale('es', 'CO'),
-        Locale('es', 'CR'),
-        Locale('es', 'DO'),
-        Locale('es', 'EC'),
-        Locale('es', 'SV'),
-        Locale('es', 'GT'),
-        Locale('es', 'HN'),
-        Locale('es', 'MX'),
-        Locale('es', 'NI'),
-        Locale('es', 'PA'),
-        Locale('es', 'PY'),
-        Locale('es', 'PE'),
-        Locale('es', 'PR'),
-        Locale('es', 'ES'),
-        Locale('es', 'UY'),
-        Locale('es', 'VE'),
-        Locale('ta', null),
-        Locale('th', null),
-        Locale('tr', null),
-        Locale('uk', null),
-        Locale('vi', null),
-        Locale('cy', null),
-        Locale('yr', 'NG')
-      ],
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ],
-      localeResolutionCallback: (locale, supportedLocales) {
-        for (var supportedLocale in supportedLocales) {
-          if (supportedLocale.languageCode == locale!.languageCode && supportedLocale.countryCode == locale.countryCode)  {
-            return supportedLocale;
-          }
-        }
-        return supportedLocales.first;
-      },
-      home: const Homepage(),
-      // home: BlocProvider(
-        // create: ((context) => sl<HomepageBloc>()),
-        // child: const Homepage(),
-      // ),
     );
   }
 
