@@ -9,30 +9,77 @@
 
 part of 'fields.dart';
 
-final displayLarge = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final displayMedium = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final displaySmall = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final headlineLarge = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final headlineMedium = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final headlineSmall = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final headline1 = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final headline2 = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final headline3 = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final headline4 = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final headline5 = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final headline6 = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final titleLarge = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final titleMedium = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final titleSmall = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final subtitle1 = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final subtitle2 = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final bodyLarge = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final bodyMedium = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final bodySmall = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final bodyText1 = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final bodyText2 = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final labelLarge = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final labelMedium = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final labelSmall = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final caption = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
-final button = GoogleFonts.epilogue(fontFeatures: <FontFeature>[const FontFeature.alternative(1)]);
+const displayLarge = TextStyle(
+  fontFamily: 'THICCCBOI',
+  fontWeight: FontWeight.w900, // Black
+);
+
+const displayMedium = TextStyle(
+  fontFamily: 'THICCCBOI',
+  fontWeight: FontWeight.w800, // ExtraBold
+);
+
+const displaySmall = TextStyle(
+  fontFamily: 'THICCCBOI',
+  fontWeight: FontWeight.w700, // Bold
+);
+
+const headlineLarge = TextStyle(
+  fontFamily: 'THICCCBOI',
+  fontWeight: FontWeight.w600, // SemiBold
+);
+
+const headlineMedium = TextStyle(
+  fontFamily: 'THICCCBOI',
+  fontWeight: FontWeight.w500, // Medium
+);
+
+const headlineSmall = TextStyle(
+  fontFamily: 'THICCCBOI',
+  fontWeight: FontWeight.w400, // Regular
+);
+
+const titleLarge = TextStyle(
+  fontFamily: 'THICCCBOI',
+  fontWeight: FontWeight.w700, // Bold
+);
+
+const titleMedium = TextStyle(
+  fontFamily: 'THICCCBOI',
+  fontWeight: FontWeight.w600, // SemiBold
+);
+
+const titleSmall = TextStyle(
+  fontFamily: 'THICCCBOI',
+  fontWeight: FontWeight.w400, // Regular
+);
+
+const bodyLarge = TextStyle(
+  fontFamily: 'THICCCBOI',
+  fontWeight: FontWeight.w400, // Regular
+);
+
+const bodyMedium = TextStyle(
+  fontFamily: 'THICCCBOI',
+  fontWeight: FontWeight.w300, // Light
+);
+
+const bodySmall = TextStyle(
+  fontFamily: 'THICCCBOI',
+  fontWeight: FontWeight.w300, // Light
+);
+
+const labelLarge = TextStyle(
+  fontFamily: 'THICCCBOI',
+  fontWeight: FontWeight.w500, // Medium
+);
+
+const labelMedium = TextStyle(
+  fontFamily: 'THICCCBOI',
+  fontWeight: FontWeight.w400, // Regular
+);
+
+const labelSmall = TextStyle(
+  fontFamily: 'THICCCBOI',
+  fontWeight: FontWeight.w300, // Light
+);

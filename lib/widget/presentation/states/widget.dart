@@ -11,82 +11,148 @@ import 'dart:ui';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:footer/footer.dart';
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../../goyerv/presentation/states/languages_state.dart';
-import '../../../homepage/presentation/states/homepage.dart';
 import '../../../web_core/global_fields/fields.dart';
-import '../../../web_core/internationalization/app_localizations.dart';
-import '../../../web_core/internationalization/locales_preferences.dart';
 
 
 
 
+FocusNode focusNodeOne = FocusNode();
+FocusNode focusNodeTwo = FocusNode();
+FocusNode focusNodeThree = FocusNode();
+FocusNode focusNodeFour = FocusNode();
+FocusNode focusNodeFive = FocusNode();
 
-PreferredSizeWidget? appBar(BuildContext context, void Function(void Function() n) setState) {
+Uri uri = Uri.parse('https://www.goyerv.com');
+Uri uriTerms = Uri.parse('https://legal.goyerv.com');
+Uri uriPrivacy = Uri.parse('https://legal.goyerv.com');
+Uri uriSupport = Uri.parse('https://support.goyerv.com');
+Uri uriDevelopers = Uri.parse('https://github.com/goyerv');
+Uri uriBulletin = Uri.parse('https://careers.goyerv.com/goyerv');
+
+
+
+
+Uri uriGoyerv = Uri.parse('https://www.goyerv.com/goyerv');
+Uri uriFacebook = Uri.parse('https://web.facebook.com/profile.php?id=61573027977193');
+// Remember to update this username
+Uri uriX = Uri.parse('https://x.com/goyervltd');
+Uri uriInstagram = Uri.parse('https://www.instagram.com/goyervltd/');
+Uri uriThreads = Uri.parse('https://www.threads.net/@goyervltd');  
+Uri uriYouTube = Uri.parse('https://www.youtube.com/@Goyerv');  
+Uri uriLinkedIn = Uri.parse('https://www.linkedin.com/company/goyerv/');  
+// TikTok
+
+
+
+
+PreferredSizeWidget? appBar(BuildContext context) {
 
   return AppBar(
-    leading: InkWell(onTap: () => launchUrl(Uri.parse('https://www.goyerv.com')), child: Image.asset('images/goyerv_logo.png', fit: BoxFit.scaleDown, filterQuality: FilterQuality.high, semanticLabel: AppLocalizations.of(context).translate('Goyerv logo'), matchTextDirection: false)),
-    // title: Text(AppLocalizations.of(context).translate('Community'), style: Theme.of(context).textTheme.titleLarge),
-    title: TextButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute<void>(builder: (BuildContext context) => const Homepage())), child: Text(AppLocalizations.of(context).translate('Resources'), style: Theme.of(context).textTheme.titleLarge)),
-    flexibleSpace: ClipRect(child: BackdropFilter(filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0), child: Container(color: transparent))),
+    automaticallyImplyLeading: false,
+    leading: InkWell(overlayColor: WidgetStateColor.resolveWith((states) => transparent), onTap: () => launchUrl(Uri.parse('https://www.goyerv.com')), child: Image.asset('images/goyerv_logo.png', fit: BoxFit.scaleDown, filterQuality: FilterQuality.high, semanticLabel: 'Goyerv logo', matchTextDirection: false)),
+    title: Text('Resources', style: Theme.of(context).textTheme.titleLarge),
+    flexibleSpace: ClipRect(child: BackdropFilter(filter: ImageFilter.blur(sigmaX: 40.0, sigmaY: 40.0), child: Container(color: transparent))),
   );
   
 }
 
 
-footer(BuildContext context, void Function(void Function() n) setState) async {
-
-  FocusNode focusNodeOne = FocusNode();
-  FocusNode focusNodeTwo = FocusNode();
-  SharedPreferences sharedPreferences = await SharedPreferences.getInstance().then((value) => value);
-  LocalesPreferencesImpl localesPreferences = LocalesPreferencesImpl(sharedPreferences);
-  String language = await localesPreferences.getLanguageKey();
-  
-  
-  
-  Uri uri = Uri.parse('https://goyerv.com');
-  Uri uriTerms = Uri.parse('https://legal.goyerv.com');
-  Uri uriPrivacy = Uri.parse('https://legal.goyerv.com');
-  Uri uriSupport = Uri.parse('https://support.goyerv.com');
-  Uri uriDevelopers = Uri.parse('https://developers.goyerv.com');
-  Uri uriNews = Uri.parse('https://news.goyerv.com');
 
 
-  return Container(
-    alignment: Alignment.bottomCenter,
-    color: Theme.of(context).primaryColorLight,
-    padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-    child:  Column(
+
+
+
+Footer footer(BuildContext context) {
+
+  double screenWidth = MediaQuery.of(context).size.width;
+
+
+  return Footer(
+    backgroundColor: Theme.of(context).primaryColor,
+    padding: const EdgeInsets.all(15.0),
+    child: Column(
       children: [
-        
+
         sbhavg,
 
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-
-            Flexible(child: RichText(text: TextSpan(children: [ TextSpan(text: '© ${DateFormat('yyyy').format(DateTime.now())} ', style: Theme.of(context).textTheme.labelSmall),  TextSpan(text: '${AppLocalizations.of(context).translate('Goyerv')} ', recognizer: TapGestureRecognizer()..onTap = () => launchUrl(uri), style: Theme.of(context).textTheme.labelSmall), TextSpan(text: AppLocalizations.of(context).translate('LLC. All rights reserved'), style: Theme.of(context).textTheme.labelSmall), ]))),
-
-            Flexible(child: TextButton(onPressed: () => launchUrl(uriTerms), focusNode: focusNodeOne, child: Text(AppLocalizations.of(context).translate('Terms'), style: Theme.of(context).textTheme.labelSmall),)),
-
-            Flexible(child: TextButton(onPressed: () => launchUrl(uriPrivacy), focusNode: focusNodeOne, child: Text(AppLocalizations.of(context).translate('Privacy'), style: Theme.of(context).textTheme.labelSmall),)),
-
-            Flexible(child: TextButton(onPressed: () => launchUrl(uriSupport), focusNode: focusNodeOne, child: Text(AppLocalizations.of(context).translate('Support'), style: Theme.of(context).textTheme.labelSmall),)),
             
-            Flexible(child: TextButton(onPressed: () => launchUrl(uriDevelopers), focusNode: focusNodeOne, child: Text(AppLocalizations.of(context).translate('Developers'), style: Theme.of(context).textTheme.labelSmall),)),
-            
-            Flexible(child: TextButton(onPressed: () => launchUrl(uriNews), focusNode: focusNodeOne, child: Text(AppLocalizations.of(context).translate('News'), style: Theme.of(context).textTheme.labelSmall),)),
-      
-            Row(children: [Flexible(child: Semantics(button: true, label: AppLocalizations.of(context).translate('Globe(Language) icon'), child: IconButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute<void>(builder: (BuildContext context) => const Languages())), icon: const Icon(Icons.language), hoverColor: defaultColor, focusNode: focusNodeTwo))), Flexible(child: Text(language, style: Theme.of(context).textTheme.bodySmall)) ],)
+            GestureDetector(onTap: () => launchUrl(uriGoyerv), child: SvgPicture.asset('images/Goyerv_logo.svg', semanticsLabel: 'Goyerv logo')),
 
+            sbhmin,
+
+            GestureDetector(onTap: () => launchUrl(uriFacebook), child: SvgPicture.asset('images/Facebook_logo.svg', semanticsLabel: 'Facebook logo')),
+
+            sbhmin,
+
+            GestureDetector(onTap: () => launchUrl(uriX), child: SvgPicture.asset('images/X_logo.svg', semanticsLabel: 'X logo')),
+
+            sbhmin,
+
+            GestureDetector(onTap: () => launchUrl(uriInstagram), child: SvgPicture.asset('images/Instagram_logo.svg', semanticsLabel: 'Instagram logo')),
+
+            sbhmin,
+
+            GestureDetector(onTap: () =>launchUrl(uriThreads), child: SvgPicture.asset('images/Threads_logo.svg', semanticsLabel: 'Threads logo')),
+
+            sbhmin,
+
+            GestureDetector(onTap: () => launchUrl(uriYouTube), child: SvgPicture.asset('images/YouTube_logo.svg', semanticsLabel: 'YouTube logo')),
+
+            sbhmin,
+
+            GestureDetector(onTap: () => launchUrl(uriLinkedIn), child: SvgPicture.asset('images/LinkedIn_logo.svg', semanticsLabel: 'LinkedIn logo')),
+
+
+
+            
           ],
+        ),
+
+        sbhmin,
+
+        RichText(text: TextSpan(children: [ TextSpan(text: '© ${DateFormat('yyyy').format(DateTime.now())} ', style: Theme.of(context).textTheme.labelSmall),  TextSpan(text: 'Goyerv ', recognizer: TapGestureRecognizer()..onTap = () => launchUrl(uriGoyerv), style: Theme.of(context).textTheme.labelSmall), TextSpan(text: 'Ltd. All rights reserved', style: Theme.of(context).textTheme.labelSmall), ])),
+
+
+        sbhavg,
+
+
+        Center(
+          child: Wrap(
+            alignment: WrapAlignment.center,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            spacing: 16,
+            runSpacing: 16,
+            direction: screenWidth > 600 ? Axis.horizontal : Axis.vertical,
+            children: [
+              
+              TextButton(onPressed: () => launchUrl(uriTerms), focusNode: focusNodeOne, child: Text('Terms', style: Theme.of(context).textTheme.labelSmall),),
+
+              TextButton(onPressed: () => launchUrl(uriPrivacy), focusNode: focusNodeTwo, child: Text('Privacy', style: Theme.of(context).textTheme.labelSmall),),
+
+              TextButton(onPressed: () => launchUrl(uriSupport), focusNode: focusNodeThree, child: Text('Support', style: Theme.of(context).textTheme.labelSmall),),
+
+              TextButton(onPressed: () => launchUrl(uriDevelopers), focusNode: focusNodeFour, child: Text('Developers', style: Theme.of(context).textTheme.labelSmall),),
+
+              TextButton(onPressed: () => launchUrl(uriBulletin), focusNode: focusNodeFive, child: Text('Bulletin', style: Theme.of(context).textTheme.labelSmall),),
+
+
+            ],
+          ),
         )
-      ]
-    
+
+
+      ],
     )
   );
+
+
+
 
 }
