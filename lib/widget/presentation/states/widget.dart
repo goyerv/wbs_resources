@@ -17,6 +17,7 @@ import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../web_core/global_fields/fields.dart';
+import '../../../web_core/util/hover.dart';
 
 
 
@@ -38,23 +39,21 @@ Uri uriBulletin = Uri.parse('https://careers.goyerv.com/goyerv');
 
 
 Uri uriGoyerv = Uri.parse('https://www.goyerv.com/goyerv');
-Uri uriFacebook = Uri.parse('https://web.facebook.com/profile.php?id=61573027977193');
+// Uri uriFacebook = Uri.parse('https://web.facebook.com/profile.php?id=61573027977193');
 // Remember to update this username
 Uri uriX = Uri.parse('https://x.com/goyervltd');
-Uri uriInstagram = Uri.parse('https://www.instagram.com/goyervltd/');
-Uri uriThreads = Uri.parse('https://www.threads.net/@goyervltd');  
-Uri uriYouTube = Uri.parse('https://www.youtube.com/@Goyerv');  
+// Uri uriInstagram = Uri.parse('https://www.instagram.com/goyervltd/');
+// Uri uriThreads = Uri.parse('https://www.threads.net/@goyervltd');  
+// Uri uriYouTube = Uri.parse('https://www.youtube.com/@Goyerv');  
 Uri uriLinkedIn = Uri.parse('https://www.linkedin.com/company/goyerv/');  
 // TikTok
-
-
 
 
 PreferredSizeWidget? appBar(BuildContext context) {
 
   return AppBar(
     automaticallyImplyLeading: false,
-    leading: InkWell(overlayColor: WidgetStateColor.resolveWith((states) => transparent), onTap: () => launchUrl(Uri.parse('https://www.goyerv.com')), child: Image.asset('images/goyerv_logo.png', fit: BoxFit.scaleDown, filterQuality: FilterQuality.high, semanticLabel: 'Goyerv logo', matchTextDirection: false)),
+    leading: InkWell(overlayColor: WidgetStateColor.resolveWith((states) => transparent), onTap: () => launchUrl(Uri.parse('https://www.goyerv.com')), child: Image.asset(Theme.of(context).brightness == Brightness.dark ? 'assets/images/goyerv_logo_dark.png' : 'assets/images/goyerv_logo_light.png', fit: BoxFit.scaleDown, filterQuality: FilterQuality.high, semanticLabel: 'Goyerv logo', matchTextDirection: false)),
     title: Text('Resources', style: Theme.of(context).textTheme.titleLarge),
     flexibleSpace: ClipRect(child: BackdropFilter(filter: ImageFilter.blur(sigmaX: 40.0, sigmaY: 40.0), child: Container(color: transparent))),
   );
@@ -85,25 +84,25 @@ Footer footer(BuildContext context) {
             
             GestureDetector(onTap: () => launchUrl(uriGoyerv), child: SvgPicture.asset('images/Goyerv_logo.svg', semanticsLabel: 'Goyerv logo')),
 
-            sbhmin,
+            // sbhmin,
 
-            GestureDetector(onTap: () => launchUrl(uriFacebook), child: SvgPicture.asset('images/Facebook_logo.svg', semanticsLabel: 'Facebook logo')),
+            // GestureDetector(onTap: () => launchUrl(uriFacebook), child: SvgPicture.asset('images/Facebook_logo.svg', semanticsLabel: 'Facebook logo')),
 
             sbhmin,
 
             GestureDetector(onTap: () => launchUrl(uriX), child: SvgPicture.asset('images/X_logo.svg', semanticsLabel: 'X logo')),
 
-            sbhmin,
+            // sbhmin,
 
-            GestureDetector(onTap: () => launchUrl(uriInstagram), child: SvgPicture.asset('images/Instagram_logo.svg', semanticsLabel: 'Instagram logo')),
+            // GestureDetector(onTap: () => launchUrl(uriInstagram), child: SvgPicture.asset('images/Instagram_logo.svg', semanticsLabel: 'Instagram logo')),
 
-            sbhmin,
+            // sbhmin,
 
-            GestureDetector(onTap: () =>launchUrl(uriThreads), child: SvgPicture.asset('images/Threads_logo.svg', semanticsLabel: 'Threads logo')),
+            // GestureDetector(onTap: () =>launchUrl(uriThreads), child: SvgPicture.asset('images/Threads_logo.svg', semanticsLabel: 'Threads logo')),
 
-            sbhmin,
+            // sbhmin,
 
-            GestureDetector(onTap: () => launchUrl(uriYouTube), child: SvgPicture.asset('images/YouTube_logo.svg', semanticsLabel: 'YouTube logo')),
+            // GestureDetector(onTap: () => launchUrl(uriYouTube), child: SvgPicture.asset('images/YouTube_logo.svg', semanticsLabel: 'YouTube logo')),
 
             sbhmin,
 

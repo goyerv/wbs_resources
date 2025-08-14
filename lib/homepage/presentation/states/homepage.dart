@@ -81,7 +81,7 @@ class _HomepageState extends State<Homepage> {
                           
                                 Expanded(
                                   flex: 74,
-                                  child: Image.network("https://resources.goyerv.com/2025/images/Bustling Night Market.jpg", fit: BoxFit.cover, width: double.infinity)
+                                  child: Image.network("https://resources.goyerv.com/2025/images/Bustling%20Night%20Market.jpg", fit: BoxFit.cover, width: double.infinity)
                                 ),
                           
                           
@@ -111,7 +111,7 @@ class _HomepageState extends State<Homepage> {
                           
                                 Expanded(
                                   flex: 72,
-                                  child: Image.network("https://resources.goyerv.com/2025/images/Our set of three large tote bags can hold as much.jpg", fit: BoxFit.cover, width: double.infinity)
+                                  child: Image.network("https://resources.goyerv.com/2025/images/Our%20set%20of%20three%20large%20tote%20bags%20can%20hold%20as%20much.jpg", fit: BoxFit.cover, width: double.infinity)
                                 ),
                           
                           
@@ -142,7 +142,7 @@ class _HomepageState extends State<Homepage> {
                           
                                 Expanded(
                                   flex: 68,
-                                  child: Image.network("https://resources.goyerv.com/2025/images/Varito SF5636 X-Ray Baggage Scanner.jpg", fit: BoxFit.cover, width: double.infinity)
+                                  child: Image.network("https://resources.goyerv.com/2025/images/Varito%20SF5636%20X-Ray%20Baggage%20Scanner.jpg", fit: BoxFit.cover, width: double.infinity)
                                 ),
                           
                           
@@ -171,7 +171,7 @@ class _HomepageState extends State<Homepage> {
                           
                                 Expanded(
                                   flex: 68,
-                                  child: Image.network("https://resources.goyerv.com/2025/images/Travel News_ Why You Need to Fly With Global Entry, Save on NYC.jpg", fit: BoxFit.cover, width: double.infinity)
+                                  child: Image.network("https://resources.goyerv.com/2025/images/Travel%20News_%20Why%20You%20Need%20to%20Fly%20With%20Global%20Entry%20Save%20on%20NYC.jpg", fit: BoxFit.cover, width: double.infinity)
                                 ),
                           
                           
@@ -201,7 +201,7 @@ class _HomepageState extends State<Homepage> {
                           
                                 Expanded(
                                   flex: 68,
-                                  child: Image.network("https://resources.goyerv.com/2025/images/Parcel Ready Perforated.jpg", fit: BoxFit.cover, width: double.infinity)
+                                  child: Image.network("https://resources.goyerv.com/2025/images/Parcel%20Ready%20Perforated.jpg", fit: BoxFit.cover, width: double.infinity)
                                 ),
                           
                                 Expanded(
@@ -231,7 +231,7 @@ class _HomepageState extends State<Homepage> {
                           
                                 Expanded(
                                   flex: 68,
-                                  child: Image.network("https://resources.goyerv.com/2025/images/Grocery shopping with a bike, no prob.jpg", fit: BoxFit.cover, width: double.infinity)
+                                  child: Image.network("https://resources.goyerv.com/2025/images/Grocery%20shopping%20with%20a%20bike%20no%20prob.jpg", fit: BoxFit.cover, width: double.infinity)
                                 ),
                           
                                 Expanded(
@@ -261,7 +261,7 @@ class _HomepageState extends State<Homepage> {
                           
                                 Expanded(
                                   flex: 68,
-                                  child: Image.network("https://resources.goyerv.com/2025/images/morocco, outside the bazaar in Marrakech.jpg", fit: BoxFit.cover, width: double.infinity)
+                                  child: Image.network("https://resources.goyerv.com/2025/images/morocco%20outside%20the%20bazaar%20in%20Marrakech.jpg", fit: BoxFit.cover, width: double.infinity)
                                 ),
                           
                                 Expanded(
@@ -321,7 +321,7 @@ class _HomepageState extends State<Homepage> {
                           
                                 Expanded(
                                   flex: 68,
-                                  child: Image.network("https://resources.goyerv.com/2025/images/Best Bike Logistics Company in Lagos 2024.jpg", fit: BoxFit.cover, width: double.infinity)
+                                  child: Image.network("https://resources.goyerv.com/2025/images/Best%20Bike%20Logistics%20Company%20in%20Lagos%202024.jpg", fit: BoxFit.cover, width: double.infinity)
                                 ),
 
                                 Expanded(
