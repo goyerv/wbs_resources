@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script src="flutter_bootstrap.js" async></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9875BW5KE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-Y9875BW5KE');
+  </script> 
   <!--
     If you are serving your web app in a path other than the root, change the
     href value below to reflect the base path you are serving from.
@@ -28,8 +37,8 @@
 	<meta property="og:image" content="https://www.goyerv.com/seo/image/logo.png"/>
 	<meta property="og:type" content="website"/>
 	<meta property="og:site_name" content="Goyerv - Resources"/>
-  <meta property="og: image:width" content="300" />
-  <meta property="og: image:height" content="300" />
+  <meta property="og: image:width" content="512" />
+  <meta property="og: image:height" content="512" />
 
 
   <!-- X -->
@@ -45,34 +54,49 @@
   <meta name="apple-mobile-web-app-title" content="Goyerv - Resources">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Goyerv - Resources",
+      "description": "Learn more on the recommended practices by Goyerv for ensuring a more inclusive, professional and trustworthy platform for all Goyerv users.",
+      "url": "https://resources.goyerv.com",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Goyerv",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.goyerv.com/seo/image/logo.png"
+        }
+      }
+    }
+  </script>
+
+  <style>
+    #preload-seo { display: block; position: absolute; top: -9999px; left: -9999px; }
+  </style>
+
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <!-- <title>goyerv_resources_website</title> -->
   <title>Goyerv - Resources</title>
-  <link rel="manifest" href="manifest.json">
 
-  <script>
-    // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = null;
-  </script>
-  <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
 </head>
 <body>
-  <script>
-    window.addEventListener('load', function(ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        }
-      }).then(function(engineInitializer) {
-        return engineInitializer.initializeEngine();
-      }).then(function(appRunner) {
-        return appRunner.runApp();
-      });
-    });
-  </script>
+  <div id="preload-seo">
+    <h1>Goyerv - Resources</h1>
+      <p>
+        Learn more on the recommended practices by Goyerv for ensuring a more inclusive, professional and trustworthy platform for all Goyerv users.
+      </p>
+    </div>
+    <script>
+      setTimeout(() => {
+        const seo = document.getElementById('preload-seo');
+        if (seo) seo.remove();
+      }, 2000);
+    </script>
+</body>
 </body>
 </html>

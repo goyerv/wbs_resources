@@ -37,34 +37,21 @@ class _GoyervResourcesState extends State<GoyervResources> {
 
 
 
-  late final GoRouter router;
-  late GlobalKey<NavigatorState> navigatorKey;
+  @override
+  Widget build(BuildContext context) {
 
-
-  @override 
-  void initState() {
-    navigatorKey = GlobalKey<NavigatorState>();
-    initializeRouter();
-    super.initState();
-  }
-
-
-
-
-  void initializeRouter() {
-    router = GoRouter(
+    final GoRouter router = GoRouter(
       initialLocation: '/',
-      navigatorKey: navigatorKey,
-      redirect: (context, state) {
-        final path = state.uri.path;
+      // redirect: (context, state) {
+      //   final path = state.uri.path;
 
-        if (path.endsWith('.html')) {
-          final newPath = path.replaceAll('.html', '');
-          return newPath;
-        }
+      //   if (path.endsWith('.html')) {
+      //     final newPath = path.replaceAll('.html', '');
+      //     return newPath;
+      //   }
 
-        return null;
-      },
+      //   return null;
+      // },
       routes: [
     
         GoRoute(
@@ -75,125 +62,52 @@ class _GoyervResourcesState extends State<GoyervResources> {
         GoRoute(
           path: '/2025/:path',
           builder: (context, state) {
-            if(state.pathParameters['path'] == "best-practices") {
-              return const BestPractices();
+           
+            final path = state.pathParameters['path'];
+
+            switch (path) {
+              case "best-practices":
+                return const BestPractices();
+
+              case "building-a-personal-brand":
+                return const BuildingAPersonalBrand();
+
+              case "contraband":
+                return const Contraband();
+
+              case "customs-declaration":
+                return const CustomsDeclaration();
+
+              case "packaging":
+                return const Packaging();
+
+              case "personal-protection-during-runs":
+                return const PersonalProtectionDuringRuns();
+
+              case "prohibited-requests":
+                return const ProhibitedRequests();
+
+              case "reviews-and-ratings":
+                return const ReviewsAndRatings();
+
+              case "things-you-should-know-as-a-runner":
+                return const ThingsYouShouldKnowAsARunner();
+
+              case "handling-uncompleted-requests":
+                return const UnfinishedRequests();
+
+              default:
+                return const Homepage();
             }
 
-            return const Homepage();
           }
         ),
       
-  
-        GoRoute(
-          path: '/2025/:path',
-          builder: (context, state) {
-            if(state.pathParameters['path'] == "building-a-personal-brand") {
-              return const BuildingAPersonalBrand();
-            }
-
-            return const Homepage();
-          }
-        ),
-    
-      
-        GoRoute(
-          path: '/2025/:path',
-          builder: (context, state) {
-            if(state.pathParameters['path'] == "contrabands") {
-              return const Contraband();
-            }
-
-            return const Homepage();
-          }
-        ),
-      
-        GoRoute(
-          path: '/2025/:path',
-          builder: (context, state) {
-            if(state.pathParameters['path'] == "customs-declaration") {
-              return const CustomsDeclaration();
-            }
-
-            return const Homepage();
-          }
-        ),
-      
-        GoRoute(
-          path: '/2025/:path',
-          builder: (context, state) {
-            if(state.pathParameters['path'] == "packaging") {
-              return const Packaging();
-            }
-
-            return const Homepage();
-          }
-        ),
-      
-        GoRoute(
-          path: '/2025/:path',
-          builder: (context, state) {
-            if(state.pathParameters['path'] == "personal-protection-during-runs") {
-              return const PersonalProtectionDuringRuns();
-            }
-
-            return const Homepage();
-          }
-        ),
-      
-        GoRoute(
-          path: '/2025/:path',
-          builder: (context, state) {
-            if(state.pathParameters['path'] == "prohibited-requests") {
-              return const ProhibitedRequests();
-            }
-
-            return const Homepage();
-          }
-        ),
-      
-        GoRoute(
-          path: '/2025/:path',
-          builder: (context, state) {
-            if(state.pathParameters['path'] == "reviews-and-ratings") {
-              return const ReviewsAndRatings();
-            }
-
-            return const Homepage();
-          }
-        ),
-      
-        GoRoute(
-          path: '/2025/:path',
-          builder: (context, state) {
-            if(state.pathParameters['path'] == "things-you-should-know-as-a-runner") {
-              return const ThingsYouShouldKnowAsARunner();
-            }
-
-            return const Homepage();
-          }
-        ),
-      
-        GoRoute(
-          path: '/2025/:path',
-          builder: (context, state) {
-            if(state.pathParameters['path'] == "handling-uncompleted-requests") {
-              return const UnfinishedRequests();
-            }
-
-            return const Homepage();
-          }
-        ),
-      
-    
       ]
     );
-  
-  }
 
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: router,
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: ThemeMode.system,
