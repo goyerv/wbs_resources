@@ -13,9 +13,8 @@ import 'index.dart';
 
 
 
-
 Future<void> main() async { 
   WidgetsFlutterBinding.ensureInitialized();
-  setUrlStrategy(const PathUrlStrategy());
+  usePathUrlStrategy();
   runApp(const GoyervResources());
 } 

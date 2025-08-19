@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9875BW5KE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-Y9875BW5KE');
+  </script>
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="It’s important that all reviews are honest and reflect the true experience of the customer. Constructive criticism helps Runners improve, while positive feedback encourages best practices and rewards professionalism. Misleading or dishonest reviews can damage trust and disrupt the integrity of the platform, so we strongly encourage customers to approach reviews with fairness and sincerity.">
@@ -28,19 +35,54 @@
   <meta name="apple-mobile-web-app-title" content="Reviews and Ratings">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Reviews and Ratings",
+      "description": "It’s important that all reviews are honest and reflect the true experience of the customer. Constructive criticism helps Runners improve, while positive feedback encourages best practices and rewards professionalism. Misleading or dishonest reviews can damage trust and disrupt the integrity of the platform, so we strongly encourage customers to approach reviews with fairness and sincerity.",
+      "url": "https://resources.goyerv.com/2025/reviews-and-ratings.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Goyerv",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://resources.goyerv.com/2025/images/reviews-7b8ab4e8-d0e7-489e-93ea-54e866522818.jpg"
+        }
+      }
+    }
+  </script>
+
+  <style>
+    #preload-seo { display: block; position: absolute; top: -9999px; left: -9999px; }
+  </style>
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
   <title>Reviews and Ratings</title>
-  <script>
-    // Redirect only if it's a human (basic detection)
-    if (!navigator.userAgent.includes('Googlebot')) {
-      const fullPath = window.location.pathname;
-      window.location.href = `https://resources.goyerv.com${fullPath}`;
-    }
-  </script>
+
 </head>
 <body>
-    <h1>Redirecting...</h1>
+  <div id="preload-seo">
+    <h1>Reviews and Ratings</h1>
+      <p>
+        It’s important that all reviews are honest and reflect the true experience of the customer. Constructive criticism helps Runners improve, while positive feedback encourages best practices and rewards professionalism. Misleading or dishonest reviews can damage trust and disrupt the integrity of the platform, so we strongly encourage customers to approach reviews with fairness and sincerity.
+      </p>
+    </div>
+    <script>
+      setTimeout(() => {
+        const seo = document.getElementById('preload-seo');
+        if (seo) seo.remove();
+      }, 2000);
+    </script>
+  </body>
+  <script>
+    if (!navigator.userAgent.includes('Googlebot')) {
+      const fullPath = window.location.pathname;
+      window.location.href = `https://bulletin.goyerv.com${fullPath}`;
+    }
+  </script>
 </body>
 </html>
