@@ -25,6 +25,8 @@
 .project
 .settings/
 android/
+linux/
+macos/
 windows/
 ios/
 .metadata

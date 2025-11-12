@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:footer/footer_view.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../web_core/global_fields/fields.dart';
 import '../../../widget/presentation/states/widget.dart';
 
 
@@ -35,7 +36,7 @@ class _HomepageState extends State<Homepage> {
         'title': 'Things You Should Know As A Runner',
         'image': 'https://resources.goyerv.com/2025/images/Bustling-Night-Market.jpg',
         'teaser': 'Delivery runs may appear simple, but they demand a high level of attentiveness and communication. Since the Runner is often buying items on behalf of the customer, clarity is crucial.',
-        'date': 'Aug 18, 2025',
+        'date': 'August 18, 2025',
         'readTime': '5 min read',
         'route': '/2025/things-you-should-know-as-a-runner',
       },
@@ -139,7 +140,7 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       appBar: appBar(context),
       body: Title(
-        title: "Goyerv - Bulletin",
+        title: "Goyerv - Resources",
         color: Theme.of(context).primaryColor,
         child: Container(
           width: MediaQuery.of(context).size.width,
@@ -148,6 +149,9 @@ class _HomepageState extends State<Homepage> {
             footer: footer(context),
             flex: 8,
             children: [
+
+              sbhmax, sbhmax,
+
               Padding(
                 padding: EdgeInsets.all(padding),
                 child: GridView.count(
@@ -161,13 +165,13 @@ class _HomepageState extends State<Homepage> {
                     return MouseRegion(
                       cursor: SystemMouseCursors.click,
                       child: GestureDetector(
-                        onTap: () => context.push(post['route']),
+                        onTap: () => context.go(post['route']),
                         child: Card(
-                          elevation: 2, // Slight glow-up shadow
+                          elevation: 2, 
                           shadowColor: Colors.grey.withOpacity(0.5),
                           shape: RoundedRectangleBorder(
                             side: const BorderSide(color: Colors.grey, width: 0.5),
-                            borderRadius: BorderRadius.circular(12.0), // Softer corners
+                            borderRadius: BorderRadius.circular(12.0),
                           ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -175,12 +179,12 @@ class _HomepageState extends State<Homepage> {
 
                               if (post['image'] != null)
                                 ClipRRect(
-                                  borderRadius: const BorderRadius.vertical(top: Radius.circular(0)), 
+                                  borderRadius: const BorderRadius.vertical(top: Radius.circular(15.0)), 
                                   child: Image.network(
                                     post['image'],
                                     fit: BoxFit.cover,
                                     width: double.infinity,
-                                    height: screenWidth * 0.15, 
+                                    height: screenWidth > 800 ? screenWidth * 0.15 : screenWidth * 0.75 
                                   ),
                                 ),
 

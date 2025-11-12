@@ -1,6 +1,6 @@
-# Contributing to Goyerv Careers
+# Contributing to Goyerv Resources
 
-Thank you for considering contributing to **Goyerv Careers**!  We welcome all kinds of contributions, whether it's bug fixes, new features, documentation improvements, or discussions about future development.
+Thank you for considering contributing to **Goyerv Resources**!  We welcome all kinds of contributions, whether it's bug fixes, new features, documentation improvements, or discussions about future development.
 
 ## 📌 How to Contribute
 
