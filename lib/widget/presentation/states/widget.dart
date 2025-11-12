@@ -49,7 +49,7 @@ PreferredSizeWidget? appBar(BuildContext context) {
     automaticallyImplyLeading: false,
     leading: Padding(
       padding: const EdgeInsets.only(left: 20),
-      child: InkWell(overlayColor: WidgetStateColor.resolveWith((states) => transparent), onTap: () => launchUrl(Uri.parse('https://www.goyerv.com')), child: Image.asset(Theme.of(context).brightness == Brightness.dark? 'assets/images/goyerv_logo_dark.png' : 'assets/images/goyerv_logo_light.png', fit: BoxFit.scaleDown, filterQuality: FilterQuality.high, semanticLabel: 'Goyerv logo', matchTextDirection: false, width: 27.0, height: 27.0, cacheWidth: 27, cacheHeight: 27,)),
+      child: InkWell(overlayColor: WidgetStateColor.resolveWith((states) => transparent), onTap: () => launchUrl(Uri.parse('https://www.goyerv.com')), child: Image.asset('assets/images/goyerv_logo.png', fit: BoxFit.scaleDown, filterQuality: FilterQuality.high, semanticLabel: 'Goyerv logo', matchTextDirection: false, width: 27.0, height: 27.0, cacheWidth: 27, cacheHeight: 27,)),
     ),
     title: Text('Resources', style: Theme.of(context).textTheme.titleLarge),
     flexibleSpace: ClipRect(child: BackdropFilter(filter: ImageFilter.blur(sigmaX: 40.0, sigmaY: 40.0), child: Container(color: transparent))),
@@ -82,15 +82,16 @@ Footer footer(BuildContext context) {
           alignment: WrapAlignment.center,
           children: [
             
-            MouseRegion(cursor: SystemMouseCursors.click, child: GestureDetector(onTap: () => launchUrl(uriGoyerv), child: SvgPicture.asset('images/Goyerv_logo.svg', semanticsLabel: 'Goyerv logo', width: 25.0, height: 25.0))),
+            MouseRegion(cursor: SystemMouseCursors.click, child: GestureDetector(onTap: () => launchUrl(uriGoyerv), child: SvgPicture.asset('assets/images/goyerv_logo.svg', semanticsLabel: 'Goyerv logo', width: 41.0, height: 27.0))),
+
 
             sbhmin,
 
-            MouseRegion(cursor: SystemMouseCursors.click, child: GestureDetector(onTap: () => launchUrl(uriX), child: SvgPicture.asset('images/X_logo.svg', semanticsLabel: 'X logo', width: 18.0, height: 18.0, color: Theme.of(context).brightness == Brightness.dark? white : black))),
+            MouseRegion(cursor: SystemMouseCursors.click, child: GestureDetector(onTap: () => launchUrl(uriX), child: SvgPicture.asset('assets/images/X_logo.svg', semanticsLabel: 'X logo', width: 23.0, height: 23.0, color: Theme.of(context).brightness == Brightness.dark? white : black))),
 
             sbhmin,
 
-            MouseRegion(cursor: SystemMouseCursors.click, child: GestureDetector(onTap: () => launchUrl(uriLinkedIn), child: SvgPicture.asset('images/LinkedIn_logo.svg', semanticsLabel: 'LinkedIn logo', width: 18.0, height: 18.0))),
+            MouseRegion(cursor: SystemMouseCursors.click, child: GestureDetector(onTap: () => launchUrl(uriLinkedIn), child: SvgPicture.asset('assets/images/LinkedIn_logo.svg', semanticsLabel: 'LinkedIn logo', width: 23.0, height: 23.0))),
 
             
           ],
@@ -98,7 +99,7 @@ Footer footer(BuildContext context) {
 
         sbhmin,
 
-        RichText(text: TextSpan(children: [ TextSpan(text: '© ${DateFormat('yyyy').format(DateTime.now())} ', style: Theme.of(context).textTheme.labelSmall),  TextSpan(text: 'Goyerv ', recognizer: TapGestureRecognizer()..onTap = () => launchUrl(uriGoyerv), style: Theme.of(context).textTheme.labelSmall), TextSpan(text: 'Ltd. All rights reserved', style: Theme.of(context).textTheme.labelSmall), ])),
+        RichText(text: TextSpan(children: [ TextSpan(text: '© ${DateFormat('yyyy').format(DateTime.now())} ', style: Theme.of(context).textTheme.titleMedium),  TextSpan(text: 'Goyerv ', recognizer: TapGestureRecognizer()..onTap = () => launchUrl(uriGoyerv), style: Theme.of(context).textTheme.titleMedium), TextSpan(text: 'Ltd. All rights reserved', style: Theme.of(context).textTheme.titleMedium), ])),
 
         sbhavg,
 

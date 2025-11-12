@@ -87,13 +87,30 @@ class _ReviewsAndRatingsState extends State<ReviewsAndRatings> {
                     SizedBox(
                       width: MediaQuery.of(context).size.width,
                       child: ClipRRect(
-                        borderRadius: const BorderRadius.all(Radius.circular(18)), 
+                        borderRadius: const BorderRadius.all(Radius.circular(9)), 
                         child: Image.network(
                           'https://resources.goyerv.com/2025/images/reviews-7b8ab4e8-d0e7-489e-93ea-54e866522818.jpg',
                           fit: BoxFit.cover,
-                          width: double.infinity,
-                          height: MediaQuery.of(context).size.width * 0.15, 
+                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery.of(context).size.width * 0.60, 
                         ),
+                      ),
+                    ),
+
+
+                    sbhmin,
+
+                    const Padding(
+                      padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 16.0),
+                      child: Row(
+                        children: [
+                          Icon(Icons.calendar_today_outlined, size: 14, color: Colors.grey),
+                          SizedBox(width: 4),
+                          Text(
+                            'February 9, 2025 • 1 min read',
+                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                          ),
+                        ],
                       ),
                     ),
 

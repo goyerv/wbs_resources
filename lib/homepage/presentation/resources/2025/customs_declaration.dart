@@ -86,13 +86,30 @@ class _CustomsDeclarationState extends State<CustomsDeclaration> {
                     SizedBox(
                       width: MediaQuery.of(context).size.width,
                       child: ClipRRect(
-                        borderRadius: const BorderRadius.all(Radius.circular(18)), 
+                        borderRadius: const BorderRadius.all(Radius.circular(9)), 
                         child: Image.network(
                           'https://resources.goyerv.com/2025/images/Travel-News_-Why-You-Need-to-Fly-With-Global-Entry-Save-on-NYC.jpg',
                           fit: BoxFit.cover,
-                          width: double.infinity,
-                          height: MediaQuery.of(context).size.width * 0.15, 
+                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery.of(context).size.width * 0.60, 
                         ),
+                      ),
+                    ),
+
+
+                    sbhmin,
+
+                    const Padding(
+                      padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 16.0),
+                      child: Row(
+                        children: [
+                          Icon(Icons.calendar_today_outlined, size: 14, color: Colors.grey),
+                          SizedBox(width: 4),
+                          Text(
+                            'June 4, 2025 • 4 min read',
+                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                          ),
+                        ],
                       ),
                     ),
 

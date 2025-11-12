@@ -18,7 +18,7 @@ ThemeData darkTheme = ThemeData(
     toolbarHeight: tbh,
   ),
   brightness: Brightness.dark,
-  bottomAppBarTheme: BottomAppBarTheme(
+  bottomAppBarTheme: BottomAppBarThemeData(
     color: black..withOpacity(0.8),
     elevation: 0.0,
   ),

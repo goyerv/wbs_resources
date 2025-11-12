@@ -87,13 +87,29 @@ class _BestPracticesState extends State<BestPractices> {
                     SizedBox(
                       width: MediaQuery.of(context).size.width,
                       child: ClipRRect(
-                        borderRadius: const BorderRadius.all(Radius.circular(18)), 
+                        borderRadius: const BorderRadius.all(Radius.circular(9)), 
                         child: Image.network(
-                          'https://resources.goyerv.com/2025/images/reviews-7b8ab4e8-d0e7-489e-93ea-54e866522818.jpg',
+                          'https://resources.goyerv.com/2025/images/Best-Bike-Logistics-Company-in-Lagos-2024.jpg',
                           fit: BoxFit.cover,
                           width: MediaQuery.of(context).size.width,
-                          height: MediaQuery.of(context).size.width * 0.15, 
+                          height: MediaQuery.of(context).size.width * 0.60, 
                         ),
+                      ),
+                    ),
+
+                    sbhmin,
+
+                    const Padding(
+                      padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 16.0),
+                      child: Row(
+                        children: [
+                          Icon(Icons.calendar_today_outlined, size: 14, color: Colors.grey),
+                          SizedBox(width: 4),
+                          Text(
+                            'February 9, 2025 • 5 min read',
+                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                          ),
+                        ],
                       ),
                     ),
 

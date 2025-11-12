@@ -88,16 +88,31 @@ class _BuildingAPersonalBrandState extends State<BuildingAPersonalBrand> {
                     SizedBox(
                       width: MediaQuery.of(context).size.width,
                       child: ClipRRect(
-                        borderRadius: const BorderRadius.all(Radius.circular(18)), 
+                        borderRadius: const BorderRadius.all(Radius.circular(9)), 
                         child: Image.network(
                           'https://resources.goyerv.com/2025/images/Our-set-of-three-large-tote-bags-can-hold-as-much.jpg',
                           fit: BoxFit.cover,
-                          width: double.infinity,
-                          height: MediaQuery.of(context).size.width * 0.15, 
+                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery.of(context).size.width * 0.60, 
                         ),
                       ),
                     ),
 
+                    sbhmin,
+
+                    const Padding(
+                      padding: const EdgeInsets.fromLTRB(16.0, 0, 16.0, 16.0),
+                      child: Row(
+                        children: [
+                          Icon(Icons.calendar_today_outlined, size: 14, color: Colors.grey),
+                          SizedBox(width: 4),
+                          Text(
+                            'July 23, 2025 • 2 min read',
+                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                          ),
+                        ],
+                      ),
+                    ),
 
                     sbhavg,
 

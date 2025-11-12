@@ -30,6 +30,12 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_web_plugins:
+    sdk: flutter
+
+  # intl
+  intl: ^0.20.2
+  
   # svg_renderer
   flutter_svg: ^2.0.7
 
@@ -111,8 +117,8 @@ flutter:
 
     #  Images / Illustrations 
     - assets/images/icon.png
-    - assets/images/goyerv_logo_dark.png
-    - assets/images/goyerv_logo_light.png
+    - assets/images/goyerv_logo.png
+    - assets/images/goyerv_logo.svg
     - assets/images/Facebook_logo.svg
     - assets/images/Goyerv_logo.svg
     - assets/images/Instagram_logo.svg
