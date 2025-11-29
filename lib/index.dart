@@ -43,16 +43,6 @@ class _GoyervResourcesState extends State<GoyervResources> {
 
     final GoRouter router = GoRouter(
       initialLocation: '/',
-      // redirect: (context, state) {
-      //   final path = state.uri.path;
-
-      //   if (path.endsWith('.html')) {
-      //     final newPath = path.replaceAll('.html', '');
-      //     return newPath;
-      //   }
-
-      //   return null;
-      // },
       routes: [
     
         GoRoute(

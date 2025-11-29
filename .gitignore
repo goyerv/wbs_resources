@@ -9,7 +9,7 @@
 .history
 .svn/
 .VSCodeCounter/
-
+.htaccess
 
 # IntelliJ related
 *.iml
