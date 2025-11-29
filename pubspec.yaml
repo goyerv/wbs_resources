@@ -120,12 +120,12 @@ flutter:
     - assets/images/goyerv_logo.png
     - assets/images/goyerv_logo.svg
     - assets/images/Facebook_logo.svg
-    - assets/images/Goyerv_logo.svg
     - assets/images/Instagram_logo.svg
     - assets/images/LinkedIn_logo.svg
     - assets/images/Threads_logo.svg
     - assets/images/X_logo.svg
     - assets/images/YouTube_logo.svg
+    # - assets/images/Bustling-Night-Market.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

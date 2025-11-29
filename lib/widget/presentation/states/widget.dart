@@ -29,11 +29,11 @@ FocusNode focusNodeFour = FocusNode();
 FocusNode focusNodeFive = FocusNode();
 
 Uri uri = Uri.parse('https://www.goyerv.com');
-Uri uriTerms = Uri.parse('https://legal.goyerv.com');
-Uri uriPrivacy = Uri.parse('https://legal.goyerv.com');
+Uri uriTerms = Uri.parse('https://legal.goyerv.com/terms');
+Uri uriPrivacy = Uri.parse('https://legal.goyerv.com/privacy');
 Uri uriSupport = Uri.parse('https://support.goyerv.com');
 Uri uriDevelopers = Uri.parse('https://github.com/goyerv');
-Uri uriBulletin = Uri.parse('https://careers.goyerv.com/goyerv');
+Uri uriBulletin = Uri.parse('https://bulletin.goyerv.com');
 
 
 
