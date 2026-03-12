@@ -9,6 +9,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:goyerv_resources_website/homepage/presentation/resources/2025/credits.dart';
 import 'homepage/presentation/resources/2025/best_practices.dart';
 import 'homepage/presentation/resources/2025/building_a_personal_brand.dart';
 import 'homepage/presentation/resources/2025/contraband.dart';
@@ -86,6 +87,9 @@ class _GoyervResourcesState extends State<GoyervResources> {
 
               case "handling-uncompleted-requests":
                 return const UnfinishedRequests();
+
+              case "credits":
+                return const Credits();
 
               default:
                 return const Homepage();

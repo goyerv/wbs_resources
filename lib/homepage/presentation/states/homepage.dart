@@ -33,6 +33,14 @@ class _HomepageState extends State<Homepage> {
     // List of posts for easier management (add more deets here if you want)
     final List<Map<String, dynamic>> posts = [
       {
+        'title': 'Credits',
+        'image': 'https://resources.goyerv.com/2025/images/tap-to-pay.jpg',
+        'teaser': 'Credits are a straightforward way for us to reward the people who make Goyerv worth using. If you ever have questions about your balance or your referrals, you can check your dashboard at any time or get in touch with our support team.',
+        'date': 'November 4, 2025',
+        'readTime': '5 min read',
+        'route': '/2025/credits',
+      },
+      {
         'title': 'Things You Should Know As A Runner',
         'image': 'https://resources.goyerv.com/2025/images/Bustling-Night-Market.jpg',
         'teaser': 'Delivery runs may appear simple, but they demand a high level of attentiveness and communication. Since the Runner is often buying items on behalf of the customer, clarity is crucial.',
@@ -158,7 +166,7 @@ class _HomepageState extends State<Homepage> {
                             constraints: BoxConstraints(
                               maxWidth: w(context),
                               maxHeight: MediaQuery.of(context).size.width >= 800
-                                  ? MediaQuery.of(context).size.height * 0.75
+                                  ? MediaQuery.of(context).size.height * 0.82
                                   : MediaQuery.of(context).size.width * 0.85,
                             ),
                             child: Column(
